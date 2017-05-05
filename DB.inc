@@ -11,7 +11,7 @@ Class Database
 	{
 	try
 	{
-		$this->conn = new PDO('mysql:host=localhost; dbname= ', 'root', 'password');
+		$this->conn = new PDO('mysql:host=localhost; dbname= login', 'root', 'Jrosal1219');
 		
 		return true;
 	}
@@ -41,7 +41,7 @@ Class Database
 	}
 	public function RegisterUser($username, $password, $fname, $lname, $email)
 	{
-		$DB = mysql_connect ('localhost', 'root', 'password');
+		$DB = mysql_connect ('localhost', 'root', 'Jrosal1219');
 		mysql_select_db('login');
 		$query = ("SELECT * FROM registered WHERE username = '$username'");
 		$t = mysql_query($query);
@@ -52,7 +52,7 @@ Class Database
 		}
 		else
 		{
-			$this->conn = new PDO('mysql:host=localhost; dbname= ', 'root', 'password');
+			$this->conn = new PDO('mysql:host=localhost; dbname= login ', 'root', 'Jrosal1219');
 			$stmt = $this->conn->prepare("INSERT INTO registered (username, password, fname, lname, email) VALUES (:uname, :pwd, :fname, :lname, :email, NULL)");
 			$stmt->bindParam(':uname', $username);
 	                $stmt->bindParam(':pwd', $password);
