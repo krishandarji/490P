@@ -46,6 +46,7 @@ function logError($request)
 	$log = fopen("logerror.txt", "a");
 
 	fwrite($log, $request['message'] . '\n\n');
+	$access = date("Y/m/d H:i:s");
 
 	return true;
 }
